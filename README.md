@@ -36,7 +36,7 @@ yarn add three react-three-fiber && yarn add node-sass gatsby-plugin-sass -D
     width: 100%;
   }
 ```
-     
+
 5.  Let's call `yarn run develop` from the command line to spin up our local development server and enable hot module replacement.
 
 Awesome, now we have a base website for development and can use our two main javascript libraries : [Three.js](https://threejs.org/) (THREE) and [React-three-fiber](https://inspiring-wiles-b4ffe0.netlify.com/) (RTF). THREE is a javascript library that allows developers to author 3D scenes via the [`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) without a plugin. In those scenes, developers can add lights, objects, a camera, add animations, and much more. THREE helps developers quickily start building complex 3D worlds with interactions that go beyond what was reasonable possible with the low-level[WebGL API](https://www.khronos.org/webgl/) used for drawing objects directly on canvas. RTF goes one step further and helps developers build re-usable components from THREE objects using a familiar JSX syntax in React. These new components can react to state changes and pull in hooks including specialized RTF hooks like `useFrame()`. Let's get started adding a canvas element and our first 3D object.  
@@ -322,7 +322,7 @@ const rotations = advance("rock", "rotation", state => {
 })
 ```
     
-    At this point, the code to manage our store could vary but we called advance() with the parameters of type, key, and a callback. I basically set this up to categorize the store state according to a type string, key being the property we are going to change on type, and a callback function to update our state. This should work nicely later when we expand our components depth in the future. Advance() will return the current state without re-rendering <Rock> and allow us to use it within useFrame();
+At this point, the code to manage our store could vary but we called advance() with the parameters of type, key, and a callback. I basically set this uto categorize the store state according to a type string, key being the property we are going to change on type, and a callback function to update oustate. This should work nicely later when we expand our components depth in the future. Advance() will return the current state without re-renderin<Rock> and allow us to use it within useFrame();
     
 9.  Finally, add `rockRef.current.rotation.set(...rotations)` after const rotations. to update the current rotational value of our <mesh>.
 
@@ -338,8 +338,7 @@ useFrame(() => {
   }
 })
 ```
-    
-     
+
 
 #### Interactivity
 
@@ -360,7 +359,7 @@ useFrame(() => {
   }
 })
 ```
-    
+
      
 2.  Next, we need to adjust the state of `[toggle]` by adding an event on the <mesh>. Use the [onPointerDown()](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerdown) event handler for our code works independent of a physical mouse. Add onPointerDown() to the <mesh> and within the handler call `setToggle(!toggle)`.
 
@@ -490,8 +489,8 @@ const App = () => {
 export default App
 
 ```
-    
-       
+
+ 
 6.  Finally add the scss below to our styles and run.
 
 ```scss    
@@ -501,7 +500,6 @@ canvas {
   }
 }
 ```
-    
 
  
 
